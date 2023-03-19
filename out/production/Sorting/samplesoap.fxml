@@ -1,0 +1,237 @@
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://websvc.service.sec.mware.pbg.com" xmlns:intf="http://websvc.service.sec.mware.pbg.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://websvc.service.sec.mware.pbg.com">
+    <!-- WSDL created by Apache Axis version: 1.2.1
+    Built on Jun 14, 2005 (09:15:57 EDT) -->
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://websvc.service.sec.mware.pbg.com">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ArrayOf_soapenc_string">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="soapenc:string[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="changePwdRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+        <wsdl:part name="in2" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="changePwdResponse">
+        <wsdl:part name="changePwdReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getUsersByGPIDRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+        <wsdl:part name="in2" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getUsersByGPIDResponse">
+        <wsdl:part name="getUsersByGPIDReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVerifyPwdMsgRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVerifyPwdMsgResponse">
+        <wsdl:part name="getVerifyPwdMsgReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="verifyPwdRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="verifyPwdResponse">
+        <wsdl:part name="verifyPwdReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getPwdCaseRequest"/>
+    <wsdl:message name="getPwdCaseResponse">
+        <wsdl:part name="getPwdCaseReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="isUserIdAllowedRequest"/>
+    <wsdl:message name="isUserIdAllowedResponse">
+        <wsdl:part name="isUserIdAllowedReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="isProfileSetRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="isProfileSetResponse">
+        <wsdl:part name="isProfileSetReturn" type="xsd:boolean"/>
+    </wsdl:message>
+    <wsdl:message name="getTwistedPwdRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getTwistedPwdResponse">
+        <wsdl:part name="getTwistedPwdReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="authenticateRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+        <wsdl:part name="in1" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="authenticateResponse">
+        <wsdl:part name="authenticateReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="mainRequest">
+        <wsdl:part name="in0" type="intf:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="mainResponse"/>
+    <wsdl:message name="isRegisteredRequest">
+        <wsdl:part name="in0" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="isRegisteredResponse">
+        <wsdl:part name="isRegisteredReturn" type="xsd:boolean"/>
+    </wsdl:message>
+    <wsdl:portType name="PBGSecWebSvcImpl">
+        <wsdl:operation name="changePwd" parameterOrder="in0 in1 in2">
+            <wsdl:input message="intf:changePwdRequest" name="changePwdRequest"/>
+            <wsdl:output message="intf:changePwdResponse" name="changePwdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getUsersByGPID" parameterOrder="in0 in1 in2">
+            <wsdl:input message="intf:getUsersByGPIDRequest" name="getUsersByGPIDRequest"/>
+            <wsdl:output message="intf:getUsersByGPIDResponse" name="getUsersByGPIDResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getVerifyPwdMsg" parameterOrder="in0 in1">
+            <wsdl:input message="intf:getVerifyPwdMsgRequest" name="getVerifyPwdMsgRequest"/>
+            <wsdl:output message="intf:getVerifyPwdMsgResponse" name="getVerifyPwdMsgResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="verifyPwd" parameterOrder="in0 in1">
+            <wsdl:input message="intf:verifyPwdRequest" name="verifyPwdRequest"/>
+            <wsdl:output message="intf:verifyPwdResponse" name="verifyPwdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPwdCase">
+            <wsdl:input message="intf:getPwdCaseRequest" name="getPwdCaseRequest"/>
+            <wsdl:output message="intf:getPwdCaseResponse" name="getPwdCaseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="isUserIdAllowed">
+            <wsdl:input message="intf:isUserIdAllowedRequest" name="isUserIdAllowedRequest"/>
+            <wsdl:output message="intf:isUserIdAllowedResponse" name="isUserIdAllowedResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="isProfileSet" parameterOrder="in0">
+            <wsdl:input message="intf:isProfileSetRequest" name="isProfileSetRequest"/>
+            <wsdl:output message="intf:isProfileSetResponse" name="isProfileSetResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTwistedPwd" parameterOrder="in0 in1">
+            <wsdl:input message="intf:getTwistedPwdRequest" name="getTwistedPwdRequest"/>
+            <wsdl:output message="intf:getTwistedPwdResponse" name="getTwistedPwdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="authenticate" parameterOrder="in0 in1">
+            <wsdl:input message="intf:authenticateRequest" name="authenticateRequest"/>
+            <wsdl:output message="intf:authenticateResponse" name="authenticateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="main" parameterOrder="in0">
+            <wsdl:input message="intf:mainRequest" name="mainRequest"/>
+            <wsdl:output message="intf:mainResponse" name="mainResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="isRegistered" parameterOrder="in0">
+            <wsdl:input message="intf:isRegisteredRequest" name="isRegisteredRequest"/>
+            <wsdl:output message="intf:isRegisteredResponse" name="isRegisteredResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PBGSecWebSvcSoapBinding" type="intf:PBGSecWebSvcImpl">
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="changePwd">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="changePwdRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="changePwdResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getUsersByGPID">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getUsersByGPIDRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getUsersByGPIDResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVerifyPwdMsg">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getVerifyPwdMsgRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getVerifyPwdMsgResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="verifyPwd">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="verifyPwdRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="verifyPwdResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPwdCase">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getPwdCaseRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getPwdCaseResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="isUserIdAllowed">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="isUserIdAllowedRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="isUserIdAllowedResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="isProfileSet">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="isProfileSetRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="isProfileSetResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getTwistedPwd">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getTwistedPwdRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getTwistedPwdResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="authenticate">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="authenticateRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="authenticateResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>ion
+        <wsdl:operation name="main">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="mainRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="mainResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="isRegistered">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="isRegisteredRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="isRegisteredResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://websvc.service.sec.mware.pbg.com" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PBGSecWebSvcImplService">
+        <wsdl:port binding="intf:PBGSecWebSvcSoapBinding" name="PBGSecWebSvc">
+            <wsdlsoap:address location="http://dppwls1.corp.pep.pvt:54923/authentication/services/PBGSecWebSvc"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
